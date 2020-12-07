@@ -399,19 +399,21 @@ The CPU available is an Intel i5-7400 which is a 4-core, 4-thread CPU.
 
 If it can be assumed that having more
 [CPU cores and CPU threads](https://www.guru99.com/cpu-core-multicore-thread.html)
-will allow more concurrent processes without bogging down the system, it can also be assumed that the processing time presented as (E) in the
+will allow more concurrent processes without bogging down the system, it can
+also be assumed that the processing time presented as (E) in the
 [CPU usage](#cpu-e)
-section will scale with the core or thread count as follows (assuming the procesing time is consistent regardless of any part):
+section will scale with the core or thread count as follows
+(assuming the procesing time is consistent regardless of any part):
 
 | CPU | Parallel processes | Running Time
-|---|---|---|---
+|---|---|---
 | Intel i5-7400 (4 Cores, 4 Threads) | 1 (baseline) | 68 days, 0:55:59.450152 (~69 days)
 | Intel i5-7400 | 3 | 22 days, 16:18:39.816717 (~23 days)
 | Intel i7-10700K (8 Cores, 16 Threads) | 15 | 4 days, 12:51:43.963343 (~4.5 days)
 | AMD TR 3990X (64 Cores, 128 Threads) | 127 | 12:51:27.869686 (~13 hours)
 
-Adding parallel processes will also need RAM to be allocated, so upgrading the
-CPU necessitates additional RAM.
+Each process requires its own RAM allocation, the available RAM must be
+sufficient if the CPU upgarde is expected to run more processes in parallel.
 
 ### Parallel processes over LAN
 
@@ -420,7 +422,8 @@ as the project is designed to connect to a non-local MySQL server. This means
 that another computer can help process the remaining items in the server.
 
 As of writing, applications not endorsed by BSP-ITSS are not allowed through
-Windows Firewall by default. MySQL must be allowed through this firewall so that it can be access over the network, and parallel processing can occur.
+Windows Firewall by default. MySQL must be allowed through this firewall so
+that it can be accessed over the network and parallel processing can occur.
 
 ---
 
